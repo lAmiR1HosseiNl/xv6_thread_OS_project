@@ -236,6 +236,7 @@ clone(void(*worker)(void*,void*), void *arg1, void *arg2, void* stack)
   np->sz = curproc->sz;
   np->parent = curproc;
   *np->tf = *curproc->tf;
+  np->pgdir = curproc->pgdir;
   
   void * sarg1, *sarg2, *sret;
 
