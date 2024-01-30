@@ -232,7 +232,7 @@ clone(void(*worker)(void*,void*), void *arg1, void *arg2, void* stack)
   if((np = allocproc()) == 0){
     return -1;
   } 
-  // Copy process data to the new thread
+  // new thread take data from process
   np->sz = curproc->sz;
   np->parent = curproc;
   *np->tf = *curproc->tf;
