@@ -125,3 +125,5 @@ int lock_init(lock_thread *lock)
 void lock_acquire(lock_thread *lock){
   while(xchg(&lock->flag, 1) != 0);
 }
+void lock_release(lock_thread *lock){
+  xchg(&lock->flag, 0);}
