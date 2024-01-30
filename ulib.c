@@ -117,3 +117,7 @@ int thread_join()
   int retAdd = join(&stackPointer);
   return retAdd;
 }
+int lock_init(lock_thread *lock)
+{
+  
+}
