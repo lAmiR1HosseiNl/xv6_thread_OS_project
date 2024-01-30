@@ -1,9 +1,6 @@
 struct stat;
 struct rtcdate;
 
-typedef struct lock_thread{
-  uint flag;
-}lock_thread;
 
 // system calls
 int fork(void);
@@ -44,7 +41,12 @@ void* malloc(uint);
 void free(void*);
 int atoi(const char*);
 int thread_create(void (*startRoutine)(void *,void*), void * arg1, void * arg2);
-int thread_join(); 
+int thread_join();
+
+typedef struct lock_thread{
+  uint flag;
+}lock_thread;
+
 int lock_init(lock_thread *lock);
 void lock_acquire(lock_thread *lock);
 void lock_release(lock_thread *lock);
