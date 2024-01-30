@@ -98,7 +98,10 @@ sys_clone(void)
     return -1;
   return clone((void *)worker, (void *)arg1, (void *)arg2, (void *)stack);
 }
-int sys_join(void)
+int
+sys_join(void)
 {
-  
+  int stackArg = argint(0, &stackArg);
+  void **stack = (void**) stackArg;
+  return join(stack);
 }
