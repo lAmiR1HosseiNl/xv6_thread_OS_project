@@ -119,5 +119,6 @@ int thread_join()
 }
 int lock_init(lock_thread *lock)
 {
-  
+  lock->flag = 0;
+  return 0;
 }
